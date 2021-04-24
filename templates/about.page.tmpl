@@ -1,0 +1,28 @@
+{{template "base" .}}
+
+{{define "content"}}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>About</h1>
+            <ul>
+                <li>From UK</li>
+                <li>29 years old</li>
+                <li>Likes nikujaga</li>
+                <li>Favourite drink is orange juice</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>
+                {{if ne (index .StringMap "remote_ip") ""}}
+                Your IP Address is: {{index .StringMap "remote_ip"}}
+                {{else}}
+                TEST!
+                {{end}}
+            </p>
+        </div>
+    </div>
+</div>
+{{end}}
